@@ -8,7 +8,7 @@ The website is **deployed on Netlify**, so you can view it online.
 
 ## 🔗 Live Demo
 
-[View Live Website](https://mdjunaidjewel.netlify.app/))  
+[View Live Website](https://mdjunaidjewel.netlify.app/)  
 
 ---
 
