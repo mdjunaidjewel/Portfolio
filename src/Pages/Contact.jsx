@@ -11,7 +11,6 @@ const Contact = () => {
     e.preventDefault();
     setLoading(true);
 
-    // 🔹 Loading Alert
     Swal.fire({
       title: "Sending...",
       text: "Please wait a moment",
@@ -28,7 +27,6 @@ const Contact = () => {
         form.current,
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       )
-
       .then(
         () => {
           Swal.close();
@@ -52,16 +50,18 @@ const Contact = () => {
           setLoading(false);
         }
       );
-
   };
 
   return (
-    <div id="contact" className="py-16 bg-gray-800 text-white px-5">
-      <h2 className="text-4xl font-bold mb-12 text-center gradient-text">
+    <div
+      id="contact"
+      className="py-16 bg-gray-800 text-white px-4 sm:px-6 lg:px-8"
+    >
+      <h2 className="text-3xl sm:text-4xl font-bold mb-12 text-center gradient-text">
         Contact Me
       </h2>
 
-      <div className="max-w-4xl mx-auto grid lg:grid-cols-2 gap-10">
+      <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10">
         {/* ================= Contact Info ================= */}
         <div className="space-y-6">
           <h3 className="text-2xl font-semibold">Get in Touch</h3>
@@ -72,28 +72,26 @@ const Contact = () => {
           </p>
 
           <div className="space-y-4 text-gray-300">
-            <p className="flex items-center gap-3">
+            <p className="flex items-center gap-3 flex-wrap">
               <FiMail className="text-[#00b7db] text-lg" />
-              <span className="font-semibold">Email:</span>
+              <span className="font-semibold">Email:</span>{" "}
               mdjunaidjewell@gmail.com
             </p>
 
-            <p className="flex items-center gap-3">
+            <p className="flex items-center gap-3 flex-wrap">
               <FiPhone className="text-[#00b7db] text-lg" />
-              <span className="font-semibold">Phone:</span>
-              +880 1755-715459
+              <span className="font-semibold">Phone:</span> +880 1755-715459
             </p>
 
-            <p className="flex items-center gap-3">
+            <p className="flex items-center gap-3 flex-wrap">
               <FiMapPin className="text-[#00b7db] text-lg" />
-              <span className="font-semibold">Based in:</span>
-              Dhaka, Bangladesh
+              <span className="font-semibold">Based in:</span> Dhaka, Bangladesh
             </p>
 
-            <p className="flex items-center gap-3">
+            <p className="flex items-center gap-3 flex-wrap">
               <FiHome className="text-[#00b7db] text-lg" />
-              <span className="font-semibold">Home Town:</span>
-              Bhola Barisal, Bangladesh
+              <span className="font-semibold">Home Town:</span> Bhola Barisal,
+              Bangladesh
             </p>
 
             <p className="text-sm text-gray-400">
@@ -106,7 +104,7 @@ const Contact = () => {
         <form
           ref={form}
           onSubmit={sendEmail}
-          className="bg-gray-800 rounded-xl p-6 space-y-4 shadow-md shadow-amber-200 thin-yellow-glow"
+          className="bg-gray-800 rounded-xl p-6 sm:p-8 space-y-4 shadow-md shadow-amber-200 thin-yellow-glow"
         >
           <div>
             <label className="block text-gray-300 mb-1">Name</label>
@@ -115,7 +113,7 @@ const Contact = () => {
               name="user_name"
               placeholder="Your Name"
               required
-              className="w-full p-3 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-[#00b7db]"
+              className="w-full p-3 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-[#00b7db] transition"
             />
           </div>
 
@@ -126,7 +124,7 @@ const Contact = () => {
               name="user_email"
               placeholder="Your Email"
               required
-              className="w-full p-3 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-[#00b7db]"
+              className="w-full p-3 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-[#00b7db] transition"
             />
           </div>
 
@@ -137,14 +135,14 @@ const Contact = () => {
               rows="5"
               placeholder="Your Message"
               required
-              className="w-full p-3 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-[#00b7db]"
+              className="w-full p-3 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-[#00b7db] transition"
             ></textarea>
           </div>
 
           <button
             type="submit"
             disabled={loading}
-            className="cursor-pointer w-full bg-[#00b7db] hover:bg-[#009ec1] transition-colors text-white font-semibold py-3 rounded-lg disabled:opacity-60"
+            className="w-full bg-[#00b7db] hover:bg-[#009ec1] transition-colors text-white font-semibold py-3 rounded-lg disabled:opacity-60"
           >
             {loading ? "Sending..." : "Send Message"}
           </button>

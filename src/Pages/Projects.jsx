@@ -54,7 +54,7 @@ const Projects = () => {
       id="projects"
       className="py-14 bg-gray-900 text-white min-h-screen px-5"
     >
-      <h2 className="text-4xl font-bold mb-12 text-center gradient-text text-yellow-500">
+      <h2 className="text-3xl sm:text-4xl font-bold mb-12 text-center gradient-text text-yellow-400">
         My <span className="text-blue-400">Projects</span>
       </h2>
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">

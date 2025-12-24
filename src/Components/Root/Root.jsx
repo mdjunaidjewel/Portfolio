@@ -26,19 +26,19 @@ export const Root = () => {
         <Navbar />
       </header>
       <main>
-        <section data-aos="fade-up" data-aos-delay="100">
+        <section data-aos="fade-left" data-aos-delay="100">
           <Home />
         </section>
         <section data-aos="fade-right" data-aos-delay="200">
           <MyAbout />
         </section>
-        <section data-aos="fade-left" data-aos-delay="300">
+        <section data-aos="fade-down" data-aos-delay="300">
           <Services />
         </section>
-        <section data-aos="zoom-in" data-aos-delay="400">
+        <section>
           <Projects />
         </section>
-        <section data-aos="flip-up" data-aos-delay="500">
+        <section data-aos="slide-right" data-aos-delay="400">
           <Contact />
         </section>
       </main>
