@@ -1,16 +1,38 @@
-# React + Vite
+# My Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is my personal **Portfolio Website** built with **React** and **Tailwind CSS**, fully responsive and interactive with **AOS (Animate On Scroll)** animations. The website showcases my projects, skills, services, and provides a contact section for connecting with me.  
 
-Currently, two official plugins are available:
+The website is **deployed on Netlify**, so you can view it online.  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🔗 Live Demo
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+[View Live Website](https://mdjunaidjewel.netlify.app/))  
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Technologies Used
+
+- **React.js** – Frontend framework  
+- **Tailwind CSS** – Utility-first CSS framework for styling  
+- **AOS (Animate On Scroll)** – Scroll animations  
+- **React Icons** – For adding icons easily  
+- **EmailJS** – For contact form functionality  
+- **Netlify** – Hosting and deployment  
+
+---
+
+## ✨ Features
+
+- Fully **responsive design** for mobile, tablet, and desktop  
+- Smooth **scroll animations** using AOS  
+- **Project showcase** with links to live projects and GitHub repositories  
+- **Services** section highlighting skills and offerings  
+- **Contact form** integrated with EmailJS for easy communication  
+- **Interactive navbar** and footer  
+- Modern UI/UX design with **Tailwind CSS**
+
+---
+
+
