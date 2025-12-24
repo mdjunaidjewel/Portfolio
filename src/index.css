@@ -1,0 +1,31 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* 🔹 Smooth yellow → navy blue glowing border */
+@keyframes yellow-navy-gradient-glow {
+  0% {
+    box-shadow: 2px 2px 2px 1px #facc15, 0 0 2px 1px #1e3a8a;
+  }
+  25% {
+    box-shadow: 2px 2px 4px 1px #facc15, 1px 1px 4px 1px #1e3a8a;
+  }
+  50% {
+    box-shadow: 0 0 6px 2px #facc15, 0 0 6px 2px #1e3a8a;
+  }
+  75% {
+    box-shadow: -2px -2px 4px 1px #facc15, -1px -1px 4px 1px #1e3a8a;
+  }
+  100% {
+    box-shadow: 2px 2px 2px 1px #facc15, 0 0 2px 1px #1e3a8a;
+  }
+}
+
+/* Reusable class for image */
+.thin-yellow-glow {
+  animation: yellow-navy-gradient-glow 2s linear infinite;
+  border-radius: 16px; /* match image rounded corners */
+}
