@@ -56,7 +56,7 @@ const Home = () => {
 
           {/* CV Button */}
           <a
-            href="https://drive.google.com/file/d/1tqGqNSQE6XgDDcXOpIKIBFqGA-3lWoY2/view"
+            href="https://drive.google.com/file/d/1RhyPkak11aqYVAmSeBR-Q8MOm_KgDvzk/view?usp=drive_link"
             target="_blank"
             rel="noreferrer"
             className="py-2 px-5 rounded-4xl bg-cyan-500 shadow-lg shadow-cyan-500/50 hover:bg-transparent duration-500 hover:shadow-blue-500 border-2 border-cyan-500 mr-2 block inline-block text-center"
