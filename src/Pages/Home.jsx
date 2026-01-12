@@ -7,7 +7,7 @@ const Home = () => {
     <div>
       <div
         id="home"
-        className="text-white sm:flex gap-2 justify-between items-center w-11/12 mx-auto px-4 sm:h-screen pt-23 sm:pt-0"
+        className="sm:flex gap-2 justify-between items-center w-11/12 mx-auto px-4 sm:h-screen pt-23 sm:pt-0"
       >
         {/* Left Content */}
         <div className="sm:w-7/12">

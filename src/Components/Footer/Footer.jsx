@@ -28,7 +28,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-gray-900 text-white py-10">
+    <footer className=" py-10">
       <div className="container mx-auto px-5 grid grid-cols-1 md:grid-cols-3 gap-6 items-center text-center md:text-left">
         {/* Social Links */}
         <div className="flex flex-col items-center md:items-start">
@@ -72,7 +72,7 @@ const Footer = () => {
 
         {/* Newsletter Subscription */}
         <div className="flex flex-col items-center">
-          <h3 className="text-md font-semibold mb-2 text-yellow-300">
+          <h3 className="text-md font-semibold mb-2 text-yellow-400">
             Subscribe to Newsletter
           </h3>
           <form className="flex w-full max-w-xs" onSubmit={handleSubscribe}>
@@ -104,7 +104,7 @@ const Footer = () => {
       {/* Copyright */}
       <div className="text-center text-gray-300 text-sm mt-8">
         &copy; {new Date().getFullYear()}{" "}
-        <span className="text-yellow-200">Md Junaid Jewel</span>. All rights
+        <span className="text-yellow-400">Md Junaid Jewel</span>. All rights
         reserved.
       </div>
     </footer>

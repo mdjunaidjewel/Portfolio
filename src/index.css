@@ -4,6 +4,35 @@
 html {
   scroll-behavior: smooth;
 }
+body{
+  font-family: 'Inter', sans-serif;
+}
+
+
+[data-theme="dark"] #about {
+  background-color: #0f172a; /* slate-900 */
+}
+[data-theme="dark"] #projects {
+  background-color: #0f172a; /* slate-900 */
+}
+[data-theme="dark"] .card-Paragraph {
+  color: #d1d5db;
+}
+[data-theme="dark"] .card-bg {
+  background-color: #323946;
+}
+[data-theme="dark"] .form-bg {
+  background-color: #1f2937;
+}
+[data-theme="dark"] .input-bg {
+  background-color: #374151;
+}
+[data-theme="light"] .input-bg {
+  background-color: #72afe8;
+}
+[data-theme="dark"] footer {
+  background-color: #0f172a;
+}
 
 /* 🔹 Smooth yellow → navy blue glowing border */
 @keyframes yellow-navy-gradient-glow {

@@ -52,7 +52,7 @@ const Projects = () => {
   const [activeId, setActiveId] = useState(null);
 
   return (
-    <div id="projects" className="py-14 bg-gray-900 text-white px-5">
+    <div id="projects" className="py-10 sm:py-16 text-white px-5">
       <h2 className="text-3xl sm:text-4xl font-bold mb-12 text-center text-yellow-400">
         My <span className="text-blue-400">Projects</span>
       </h2>
