@@ -3,22 +3,23 @@ import github from "../../assets/github.png";
 
 export const Navbar = () => {
   const sectionIds = ["home", "about", "services", "projects", "contact"];
-  const [active, setActive] = useState(sectionIds[0]);
+
+  const [active, setActive] = useState("home");
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  // Theme state
+  // 🔹 Theme State
   const [theme, setTheme] = useState(
     document.documentElement.getAttribute("data-theme") || "dark"
   );
 
-  // Load saved theme
+  // 🔹 Load saved theme
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme") || "dark";
     setTheme(savedTheme);
     document.documentElement.setAttribute("data-theme", savedTheme);
   }, []);
 
-  // Toggle theme
+  // 🔹 Toggle theme
   const handleToggle = () => {
     const newTheme = theme === "dark" ? "light" : "dark";
     document.documentElement.setAttribute("data-theme", newTheme);
@@ -26,27 +27,36 @@ export const Navbar = () => {
     setTheme(newTheme);
   };
 
+  // 🔹 Nav click handler
   const handleNavClick = (e, id) => {
     e.preventDefault();
+    setActive(id); // ✅ Mobile underline fix
+
     const yOffset = -64;
     const element = document.getElementById(id);
     if (!element) return;
 
-    const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+    const y =
+      element.getBoundingClientRect().top +
+      window.pageYOffset +
+      yOffset;
+
     window.scrollTo({ top: y, behavior: "smooth" });
     window.history.replaceState(null, "", window.location.pathname);
     setMobileOpen(false);
   };
 
-  // IntersectionObserver for active section
+  // 🔹 IntersectionObserver (active section detect)
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) setActive(entry.target.id);
+          if (entry.isIntersecting) {
+            setActive(entry.target.id);
+          }
         });
       },
-      { threshold: 0.5 }
+      { threshold: 0.3 } // ✅ mobile friendly
     );
 
     sectionIds.forEach((id) => {
@@ -61,8 +71,8 @@ export const Navbar = () => {
     <nav className="fixed top-0 z-50 w-full bg-base-100 text-base-content shadow-lg">
       <div className="w-11/12 mx-auto flex justify-between items-center h-16">
 
-        {/* 🔹 Mobile Hamburger (left side) */}
-        <div className="lg:hidden relative order-1">
+        {/* 🔹 Mobile Hamburger */}
+        <div className="lg:hidden">
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             className="btn btn-ghost"
@@ -71,13 +81,15 @@ export const Navbar = () => {
           </button>
 
           {mobileOpen && (
-            <div className="absolute left-0 mt-2 w-48 bg-base-200 shadow-lg rounded-lg p-4 flex flex-col gap-2 z-50">
+            <div className="absolute left-4 top-16 w-48 bg-base-200 shadow-lg rounded-lg p-4 flex flex-col gap-2 z-50">
               {sectionIds.map((id) => (
                 <a
                   key={id}
                   onClick={(e) => handleNavClick(e, id)}
-                  className={`cursor-pointer ${
-                    active === id ? "text-primary underline" : ""
+                  className={`cursor-pointer px-2 py-1 rounded transition ${
+                    active === id
+                      ? "bg-primary text-white"
+                      : "hover:bg-base-300"
                   }`}
                 >
                   {id.charAt(0).toUpperCase() + id.slice(1)}
@@ -89,7 +101,7 @@ export const Navbar = () => {
                 onClick={handleToggle}
                 className="btn btn-outline btn-sm mt-2"
               >
-                {theme === "dark" ? "☀️" : "🌙"}
+                {theme === "dark" ? "☀️ Light" : "🌙 Dark"}
               </button>
             </div>
           )}
@@ -100,25 +112,28 @@ export const Navbar = () => {
           href="https://github.com/mdjunaidjewel"
           target="_blank"
           rel="noreferrer"
-          className="flex items-center gap-2 font-bold hover:text-primary order-2 lg:order-1"
+          className="flex items-center gap-2 font-bold hover:text-primary"
         >
           <img src={github} alt="Github" className="w-7" />
-          Github
+          GitHub
         </a>
 
         {/* 🔹 Desktop Menu */}
-        <div className="hidden lg:flex gap-6 items-center order-3">
+        <div className="hidden lg:flex gap-6 items-center">
           {sectionIds.map((id) => (
             <a
               key={id}
               onClick={(e) => handleNavClick(e, id)}
-              className={`cursor-pointer ${
-                active === id ? "text-primary underline" : ""
+              className={`cursor-pointer transition ${
+                active === id
+                  ? "text-primary underline underline-offset-4"
+                  : "hover:text-primary"
               }`}
             >
               {id.charAt(0).toUpperCase() + id.slice(1)}
             </a>
           ))}
+
           {/* Theme Toggle */}
           <button onClick={handleToggle} className="btn btn-outline btn-sm">
             {theme === "dark" ? "☀️" : "🌙"}
