@@ -52,32 +52,37 @@ const Projects = () => {
   const [activeId, setActiveId] = useState(null);
 
   return (
-    <div id="projects" className="py-10 sm:py-16 text-white px-5">
-      <h2 className="text-3xl sm:text-4xl font-bold mb-12 text-center text-yellow-400">
+    <div
+      id="projects"
+      className="py-10 sm:py-16 text-white px-4 sm:px-6"
+    >
+      <h2 className="text-3xl sm:text-4xl font-bold mb-10 text-center text-yellow-400">
         My <span className="text-blue-400">Projects</span>
       </h2>
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {projectsData.map((project) => (
           <div
             key={project.id}
             onClick={() =>
               setActiveId(activeId === project.id ? null : project.id)
             }
-            className="relative rounded-xl overflow-hidden shadow-lg group cursor-pointer"
+            className="relative rounded-xl overflow-hidden shadow-lg cursor-pointer group"
           >
+            {/* Image */}
             <img
               src={project.image}
               alt={project.title}
-              className="w-full h-64 object-cover"
+              className="w-full h-48 sm:h-56 md:h-64 object-cover"
             />
 
             {/* Overlay */}
             <div
               className={`
-                absolute inset-0 bg-black bg-opacity-70
+                absolute inset-0 bg-black/80
                 flex flex-col justify-center items-center
-                text-center p-6 transition-all duration-300
+                text-center px-4 sm:px-6
+                transition-all duration-300
 
                 ${
                   activeId === project.id
@@ -85,14 +90,21 @@ const Projects = () => {
                     : "opacity-0 translate-y-full"
                 }
 
+                sm:opacity-0
+                sm:translate-y-full
                 sm:group-hover:opacity-100
                 sm:group-hover:translate-y-0
               `}
             >
-              <h3 className="text-2xl font-semibold mb-2">{project.title}</h3>
-              <p className="text-gray-300 mb-4">{project.description}</p>
+              <h3 className="text-lg sm:text-xl font-semibold mb-2">
+                {project.title}
+              </h3>
 
-              <div className="flex space-x-4 mb-4">
+              <p className="text-gray-300 text-sm sm:text-base mb-3">
+                {project.description}
+              </p>
+
+              <div className="flex gap-4 mb-3 text-sm sm:text-base">
                 <a
                   href={project.link}
                   target="_blank"
@@ -118,9 +130,10 @@ const Projects = () => {
                 {project.tags.map((tag, idx) => (
                   <span
                     key={idx}
-                    className="text-xs px-3 py-1 rounded-full font-semibold"
+                    className="text-[10px] sm:text-xs px-2 sm:px-3 py-1 rounded-full font-semibold"
                     style={{
-                      background: "linear-gradient(to right, #004f6e, #00b7db)",
+                      background:
+                        "linear-gradient(to right, #004f6e, #00b7db)",
                     }}
                   >
                     {tag}
