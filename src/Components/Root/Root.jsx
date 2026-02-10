@@ -11,14 +11,16 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 export const Root = () => {
-  useEffect(() => {
-    AOS.init({
-      duration: 1000, // animation duration in ms
-      once: false, // scroll up/down এ বারবার animation হবে
-      mirror: true, // scroll up করলে animation reverse হবে
-      easing: "ease-in-out",
-    });
-  }, []);
+useEffect(() => {
+  AOS.init({
+    duration: 400,        // animation একটু ধীর = smooth
+    once: false,
+    mirror: true,
+    easing: "ease-in-out",
+    offset: 120,          // section screen এ ঢুকলেই animation শুরু
+    delay: 40,
+  });
+}, []);
 
   return (
     <div>
@@ -26,23 +28,23 @@ export const Root = () => {
         <Navbar />
       </header>
       <main>
-        <section data-aos="fade-left" data-aos-delay="100">
+        <section data-aos="fade-left" data-aos-delay="1000">
           <Home />
         </section>
-        <section data-aos="fade-right" data-aos-delay="200">
+        <section data-aos="fade-right" data-aos-delay="50">
           <MyAbout />
         </section>
-        <section data-aos="fade-down" data-aos-delay="300">
+        <section data-aos="fade-down" data-aos-delay="50">
           <Services />
         </section>
         <section>
           <Projects />
         </section>
-        <section data-aos="slide-right" data-aos-delay="400">
+        <section data-aos="slide-right" data-aos-delay="50">
           <Contact />
         </section>
       </main>
-      <footer data-aos="fade-down" data-aos-delay="600">
+      <footer data-aos="fade-down" data-aos-delay="50">
         <Footer />
       </footer>
     </div>
